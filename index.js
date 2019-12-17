@@ -39,7 +39,13 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(id, name, email) {
+  const obj = {
+    id: id,
+    name: name,
+    email: email
+  };
+  return obj;
   /* code here */
 }
 
@@ -56,8 +62,8 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(person) {
+  return `Hello, my name is ${person.name}`;
 }
 
 /**
@@ -73,7 +79,18 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
+function makeSmartPerson(name) {
+  const newObj = {
+    name: name,
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+    speak: function(){
+      return `Hello, my name is ${this.name}`
+    }
+  }
+
+  return newObj;
   /* code here */
 }
 
@@ -136,7 +153,7 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  
 }
 
 /**
@@ -166,8 +183,8 @@ function getLastCarInfo(/* code here */) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory) {
+  return `This is a ${inventory[inventory.length-1].car_make} `
 }
 
 /**
@@ -192,6 +209,7 @@ function sortCarInventory(/* code here */) {
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
 function getModelYears(/* code here */) {
+
   /* code here */
 }
 
@@ -208,6 +226,7 @@ function getModelYears(/* code here */) {
  * in the same order as they appear in the original inventory.
 */
 function getOlderCars(/* code here */) {
+  
   /* code here */
 }
 
